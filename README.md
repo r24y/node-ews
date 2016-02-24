@@ -14,6 +14,14 @@ A extension of node-soap with httpntlm to make queries to Microsoft's Exchange W
 - After downloading the wsdl file, the wrapper dynamically exposes all EWS SOAP functions
 - Attempts to standardize Microsoft's wsdl by modifying the file to include missing service name, port, and bindings
 
+### Testing
+
+```
+OUTLOOK_DOMAIN=ADMIN OUTLOOK_USER='maurice.moss' OUTLOOK_PASSWORD='password123' OUTLOOK_HOST='exchange.reynholm.net' node test
+```
+
+You may test with a free [Outlook.com](http://outlook.com) account. `OUTLOOK_DOMAIN` is optional and is not used for Outlook.com.
+
 #### Example 1: Get Exchange Distribution List Members Using ExpandDL
 ###### https://msdn.microsoft.com/EN-US/library/office/aa564755.aspx
 ```js
