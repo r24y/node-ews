@@ -1,7 +1,7 @@
 var ews = require('../lib/ews');
 var request = require('request');
 
-ews.auth([process.env.OUTLOOK_DOMAIN, process.env.OUTLOOK_USER].join('\\'), process.env.OUTLOOK_PASSWORD, process.env.OUTLOOK_HOST);
+ews.auth(process.env.OUTLOOK_DOMAIN ? [process.env.OUTLOOK_DOMAIN, process.env.OUTLOOK_USER].join('\\') : process.env.OUTLOOK_USER, process.env.OUTLOOK_PASSWORD, process.env.OUTLOOK_HOST);
 console.log(['DOMAIN', 'USER', 'HOST'].map(function (k) { return process.env['OUTLOOK_' + k];}));
 ews.soapOptions = {
   wsdl_options: {
